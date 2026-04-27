@@ -1,0 +1,114 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../tlauncher-extension-api/1.0.0/tlauncher-extension-api-1.0.0.module",
+    "group": "com.dreamyloong.tlauncher",
+    "module": "tlauncher-extension-api",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "tlauncher-extension-api-release.aar",
+          "url": "tlauncher-extension-api-android-1.0.0.aar",
+          "size": 335926,
+          "sha512": "ad3945451eee8661c5578eb5780461efda3495e951ddf3d0c4dcf1f2aa38b72b6bf8bed80cbd87eedf256e379571e397a9dab89578b889935beeb6a1c805abec",
+          "sha256": "c447a13e0673831ac70e5f1dfcb77239057cb4baa4fdd962641b576daeee3ebc",
+          "sha1": "d17cd51733fccf9f4fbf0742a7e32b631dcf05e2",
+          "md5": "7919a5e9e70f83011c96d48358f0fb88"
+        }
+      ]
+    },
+    {
+      "name": "releaseRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          },
+          "excludes": [
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-stdlib-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-annotations-common"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "tlauncher-extension-api-release.aar",
+          "url": "tlauncher-extension-api-android-1.0.0.aar",
+          "size": 335926,
+          "sha512": "ad3945451eee8661c5578eb5780461efda3495e951ddf3d0c4dcf1f2aa38b72b6bf8bed80cbd87eedf256e379571e397a9dab89578b889935beeb6a1c805abec",
+          "sha256": "c447a13e0673831ac70e5f1dfcb77239057cb4baa4fdd962641b576daeee3ebc",
+          "sha1": "d17cd51733fccf9f4fbf0742a7e32b631dcf05e2",
+          "md5": "7919a5e9e70f83011c96d48358f0fb88"
+        }
+      ]
+    },
+    {
+      "name": "releaseSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "files": [
+        {
+          "name": "tlauncher-extension-api-android-1.0.0-sources.jar",
+          "url": "tlauncher-extension-api-android-1.0.0-sources.jar",
+          "size": 19054,
+          "sha512": "7763e0642f1c2edfbe48496b66d825117baadc9d68b9fc2aa5a13e80daeb0bebdd21ceb13452a34963277ff4f624bf66ba16ba9a5a2abc7fcb14e7fe7aed397b",
+          "sha256": "12cf49134be8179adf0e004755df4148cbaaf7f93acb0b5dc841a9e4133b51e2",
+          "sha1": "8640d539593e1249c44bb546a4bb39ff8661f08c",
+          "md5": "1bb01e516c5925bdd41336d1622d60aa"
+        }
+      ]
+    }
+  ]
+}

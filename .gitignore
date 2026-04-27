@@ -1,0 +1,39 @@
+# Gradle and Kotlin
+.gradle/
+.kotlin/
+build/
+out/
+
+# Local environment
+local.properties
+.env
+.env.*
+
+# IDEs and editors
+.idea/
+.vscode/
+*.iml
+.vs/
+
+# .NET build output
+STS2Mobile/bin/
+STS2Mobile/obj/
+*.user
+*.suo
+*.rsuser
+TestResults/
+
+# Android and packaging output
+.cxx/
+.externalNativeBuild/
+captures/
+*.apk
+*.aab
+*.textension
+
+# Logs and OS files
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+desktop.ini

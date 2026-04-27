@@ -1,0 +1,104 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../tlauncher-extension-api/1.0.0/tlauncher-extension-api-1.0.0.module",
+    "group": "com.dreamyloong.tlauncher",
+    "module": "tlauncher-extension-api",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "extensionSdkApi-iosSimulatorArm64Main-1.0.0.klib",
+          "url": "tlauncher-extension-api-iossimulatorarm64-1.0.0.klib",
+          "size": 254952,
+          "sha512": "8725c0dbb997df5419bb92d2513f3449ba4254eab46f92169ba7f8d12f1cc70c64d0e1a527b271227a421f4a8564794171dcd404f6a1c2b8d3467f0c8d52a0aa",
+          "sha256": "98fde9cdcb5db80788688cafab15e8c242fd5fba532292fd2f54f925a9b99824",
+          "sha1": "3a5bb9d018863513a7ba3ac1e8b6a2733c500e10",
+          "md5": "460cfbf664750f72fe84a580b942c4c0"
+        }
+      ]
+    },
+    {
+      "name": "iosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "tlauncher-extension-api-iossimulatorarm64-1.0.0-sources.jar",
+          "url": "tlauncher-extension-api-iossimulatorarm64-1.0.0-sources.jar",
+          "size": 19054,
+          "sha512": "7763e0642f1c2edfbe48496b66d825117baadc9d68b9fc2aa5a13e80daeb0bebdd21ceb13452a34963277ff4f624bf66ba16ba9a5a2abc7fcb14e7fe7aed397b",
+          "sha256": "12cf49134be8179adf0e004755df4148cbaaf7f93acb0b5dc841a9e4133b51e2",
+          "sha1": "8640d539593e1249c44bb546a4bb39ff8661f08c",
+          "md5": "1bb01e516c5925bdd41336d1622d60aa"
+        }
+      ]
+    },
+    {
+      "name": "iosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "tlauncher-extension-api-iossimulatorarm64-1.0.0-metadata.jar",
+          "url": "tlauncher-extension-api-iossimulatorarm64-1.0.0-metadata.jar",
+          "size": 261,
+          "sha512": "b19d3e7688628a72754861e878d50bb1a7ca3ea589a8fd1e648ee2a06f27173be0261a5b149723f80d68f90893c89858950b5e82f8b4537d13dacc57f0739072",
+          "sha256": "6ef1fa2001e784855467b7eff8bc13fd84e00276b50013b0c7cb7f5c7af4a64f",
+          "sha1": "574f5771ca821aae74aeee6d05c7a30dee8f08f4",
+          "md5": "f5d6b704ca6843bcddeb65276e9da038"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+namespace STS2Mobile.Patches.Shaders;
+
+public static class ScryRevealPatch
+{
+    private const string Path = "res://shaders/scry_reveal.gdshader";
+
+    private const string Code =
+        "\nshader_type canvas_item;\n\nconst float borderwidth = 0.05;\nconst int gridSize = 11;\n"
+        + "const float gridSizef = 11.0;\n\n"
+        + "uniform sampler2D noiseTex1 : source_color, filter_linear, repeat_enable;\n"
+        + "uniform sampler2D noiseTex2 : source_color, filter_linear, repeat_enable;\n"
+        + "uniform vec3 borderColor : source_color;\nuniform vec3 colors[8] : source_color;\n"
+        + "uniform vec4 circleData[8];\nuniform int circles = 8;\n"
+        + "uniform int outerCircle = -1;\nuniform vec3 gridFadeParams[gridSize * gridSize];\n"
+        + "uniform float time;\nuniform float uvMargin;\n\n"
+        + "vec2 getGridPos(vec2 uv) {\n"
+        + "    return (((uv * gridSizef - gridSizef * 0.5) * (1.0 + uvMargin * 2.0) - uvMargin) + gridSizef * 0.5);\n}\n\n"
+        + "float aaStep(float edge, float gradient) {\n"
+        + "    float halfPix = fwidth(gradient) / 2.0;\n"
+        + "    return clamp((gradient - (edge - halfPix)) / (halfPix * 2.0), 0.0, 1.0);\n}\n\n"
+        + "float getAlpha(int idx, bool valid) {\n"
+        + "    if (!valid) return 0.0;\n"
+        + "    float lt = gridFadeParams[idx].z;\n"
+        + "    if (lt == 0.0) return 1.0;\n"
+        + "    return mix(gridFadeParams[idx].x, gridFadeParams[idx].y, clamp((time - lt) / 0.5, 0.0, 1.0));\n}\n\n"
+        + "void fragment() {\n"
+        + "    vec4 original_col = texture(TEXTURE, UV);\n"
+        + "    vec4 ModularCol = COLOR / original_col;\n\n"
+        + "    vec2 gridposf = getGridPos(UV);\n"
+        + "    vec2 gridpos = floor(gridposf);\n"
+        + "    bool validIndex = gridpos.x >= 0.0 && gridpos.y >= 0.0 && gridpos.x < gridSizef && gridpos.y < gridSizef;\n"
+        + "    int index = int(gridpos.y * gridSizef + gridpos.x);\n"
+        + "    float alpha = getAlpha(index, validIndex);\n\n"
+        + "    float border = 0.0;\n"
+        + "    vec2 offsets[4] = vec2[](vec2(-1,0), vec2(1,0), vec2(0,-1), vec2(0,1));\n"
+        + "    for (int i = 0; i < 4; i++) {\n"
+        + "        vec2 gn = gridpos + offsets[i];\n"
+        + "        bool vn = gn.x >= 0.0 && gn.y >= 0.0 && gn.x < gridSizef && gn.y < gridSizef;\n"
+        + "        if (!vn) continue;\n"
+        + "        int ni = int(gn.y * gridSizef + gn.x);\n"
+        + "        float an = getAlpha(ni, true);\n"
+        + "        vec2 tb = max(max(gn - gridposf, vec2(0.0)), gridposf - (gn + vec2(1.0)));\n"
+        + "        border = max(border, smoothstep(borderwidth, borderwidth - 0.03, length(tb)) * abs(alpha - an));\n"
+        + "    }\n\n"
+        + "    vec2 fromCenter = UV - 0.5;\n"
+        + "    float dist = length(fromCenter);\n\n"
+        + "    vec2 polar1 = vec2(dist * 2.0, (atan(fromCenter.y, fromCenter.x) + PI) / (PI * 2.0));\n"
+        + "    float ns1 = pow(texture(noiseTex1, polar1 + vec2(0, TIME * 0.0065)).r, 0.8);\n\n"
+        + "    vec2 polar2 = vec2(dist * 0.5, (atan(fromCenter.y, fromCenter.x) + PI) / (PI * 2.0));\n"
+        + "    float ns2 = texture(noiseTex2, polar2 + vec2(0, TIME * 0.0011)).r + 0.4;\n\n"
+        + "    float noiseSample = ns1 * ns2 * 2.0;\n\n"
+        + "    vec3 col = colors[0];\n"
+        + "    float lastmask;\n\n"
+        + "    for (int i = 0; i < circles; i++) {\n"
+        + "        vec4 cd = circleData[i];\n"
+        + "        float circle = smoothstep(cd.x * 0.5, (cd.x + cd.y) * 0.5, dist);\n"
+        + "        float msk = mix(1.0, noiseSample, pow(circle, cd.z)) * (1.0 - circle);\n"
+        + "        msk = aaStep(cd.w, msk);\n\n"
+        + "        if (i == outerCircle) {\n"
+        + "            float hg = (gridSizef - 1.0) * 0.5;\n"
+        + "            vec2 nc = hg - abs(hg - gridpos);\n"
+        + "            msk = (nc.x + nc.y) < 3.0 || !validIndex ? 0.0 : msk;\n"
+        + "        }\n\n"
+        + "        lastmask = msk;\n"
+        + "        col = mix(colors[i+1], col, msk);\n"
+        + "    }\n\n"
+        + "    if (outerCircle < 0) {\n"
+        + "        float hg = (gridSizef - 1.0) * 0.5;\n"
+        + "        vec2 nc = hg - abs(hg - gridpos);\n"
+        + "        lastmask = (nc.x + nc.y) < 3.0 || !validIndex ? 0.0 : 1.0;\n"
+        + "    }\n\n"
+        + "    COLOR = vec4(col + borderColor * border, max(alpha, border) * lastmask) * ModularCol;\n}\n";
+
+    public static void Register()
+    {
+        ShaderPatchLoader.Register(Path, Code, "ScryReveal (3x3 to 4 neighbors)");
+    }
+}

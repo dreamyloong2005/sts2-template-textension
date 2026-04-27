@@ -1,0 +1,102 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../tlauncher-extension-api/1.0.0/tlauncher-extension-api-1.0.0.module",
+    "group": "com.dreamyloong.tlauncher",
+    "module": "tlauncher-extension-api",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "windowsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "tlauncher-extension-api-windows-1.0.0.jar",
+          "url": "tlauncher-extension-api-windows-1.0.0.jar",
+          "size": 369846,
+          "sha512": "fb46813cb1b0d4f06989db4d1054c33a711a356e6a55a5a345a9a22ecc9c2dfc2ec989886411539a8a0736b1863af0882fd6cc7544f6ffc5d03e743a7cc15c02",
+          "sha256": "0fed5936cdab177e8b9ae4c398fff1ef3d857f8d56cff5a0baffc54adb197997",
+          "sha1": "97d841aa75e25d37a57be292f98bb8ad859f6999",
+          "md5": "aa3e2cff26c0218201b693e74aea43e8"
+        }
+      ]
+    },
+    {
+      "name": "windowsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "tlauncher-extension-api-windows-1.0.0.jar",
+          "url": "tlauncher-extension-api-windows-1.0.0.jar",
+          "size": 369846,
+          "sha512": "fb46813cb1b0d4f06989db4d1054c33a711a356e6a55a5a345a9a22ecc9c2dfc2ec989886411539a8a0736b1863af0882fd6cc7544f6ffc5d03e743a7cc15c02",
+          "sha256": "0fed5936cdab177e8b9ae4c398fff1ef3d857f8d56cff5a0baffc54adb197997",
+          "sha1": "97d841aa75e25d37a57be292f98bb8ad859f6999",
+          "md5": "aa3e2cff26c0218201b693e74aea43e8"
+        }
+      ]
+    },
+    {
+      "name": "windowsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "tlauncher-extension-api-windows-1.0.0-sources.jar",
+          "url": "tlauncher-extension-api-windows-1.0.0-sources.jar",
+          "size": 19054,
+          "sha512": "7763e0642f1c2edfbe48496b66d825117baadc9d68b9fc2aa5a13e80daeb0bebdd21ceb13452a34963277ff4f624bf66ba16ba9a5a2abc7fcb14e7fe7aed397b",
+          "sha256": "12cf49134be8179adf0e004755df4148cbaaf7f93acb0b5dc841a9e4133b51e2",
+          "sha1": "8640d539593e1249c44bb546a4bb39ff8661f08c",
+          "md5": "1bb01e516c5925bdd41336d1622d60aa"
+        }
+      ]
+    }
+  ]
+}
