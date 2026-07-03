@@ -17,7 +17,7 @@ public sealed class LaunchContext
     public string ModsDir { get; init; } = DefaultGameRoot + "/mods";
     public string SavesDir { get; init; } = DefaultGameRoot + "/saves";
     public int SpineUpdateDivisor { get; init; } = 2;
-    public bool PreloadTrimEnabled { get; init; } = true;
+    public bool PreloadTrimEnabled { get; init; }
     public int AssetLoadingBatchSize { get; init; } = 8;
     public bool MobileShadersEnabled { get; init; } = true;
     public bool ShaderCacheEnabled { get; init; }
@@ -78,7 +78,7 @@ public sealed class LaunchContext
             ModsDir = DefaultGameRoot + "/mods",
             SavesDir = DefaultGameRoot + "/saves",
             SpineUpdateDivisor = 2,
-            PreloadTrimEnabled = true,
+            PreloadTrimEnabled = false,
             AssetLoadingBatchSize = 8,
             MobileShadersEnabled = true,
             ShaderCacheEnabled = false,

@@ -5,6 +5,7 @@ import com.dreamyloong.tlauncher.sdk.model.GameInstanceId
 import java.util.Base64
 
 private const val DefaultSpineUpdateDivisor = 2
+private const val DefaultPreloadTrimEnabled = false
 private const val DefaultAssetLoadingBatchSize = 8
 private const val DefaultParticleScalePercent = 50
 private const val DefaultGlowMode = "reduced"
@@ -18,7 +19,7 @@ data class Sts2VersionDefinition(
     val saveDirectory: String,
     val modDirectory: String,
     val spineUpdateDivisor: Int = DefaultSpineUpdateDivisor,
-    val preloadTrimEnabled: Boolean = true,
+    val preloadTrimEnabled: Boolean = DefaultPreloadTrimEnabled,
     val assetLoadingBatchSize: Int = DefaultAssetLoadingBatchSize,
     val mobileShadersEnabled: Boolean = true,
     val particleScalePercent: Int = DefaultParticleScalePercent,
@@ -34,7 +35,7 @@ data class Sts2VersionDraft(
     val saveDirectory: String = "",
     val modDirectory: String = "",
     val spineUpdateDivisorText: String = DefaultSpineUpdateDivisor.toString(),
-    val preloadTrimEnabled: Boolean = true,
+    val preloadTrimEnabled: Boolean = DefaultPreloadTrimEnabled,
     val assetLoadingBatchSizeText: String = DefaultAssetLoadingBatchSize.toString(),
     val mobileShadersEnabled: Boolean = true,
     val particleScalePercentText: String = DefaultParticleScalePercent.toString(),
@@ -45,7 +46,7 @@ data class Sts2VersionDraft(
 
 data class Sts2LaunchSettingsDraft(
     val spineUpdateDivisorText: String = DefaultSpineUpdateDivisor.toString(),
-    val preloadTrimEnabled: Boolean = true,
+    val preloadTrimEnabled: Boolean = DefaultPreloadTrimEnabled,
     val assetLoadingBatchSizeText: String = DefaultAssetLoadingBatchSize.toString(),
     val mobileShadersEnabled: Boolean = true,
     val particleScalePercentText: String = DefaultParticleScalePercent.toString(),

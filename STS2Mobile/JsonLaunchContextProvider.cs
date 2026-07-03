@@ -90,7 +90,7 @@ public sealed class JsonLaunchContextProvider : ILaunchContextProvider
             ModsDir = ReadString(root, "modsDir", $"{gameRoot}/mods"),
             SavesDir = ReadString(root, "savesDir", $"{gameRoot}/saves"),
             SpineUpdateDivisor = ReadInt(root, "spineUpdateDivisor", 2),
-            PreloadTrimEnabled = ReadBool(root, "preloadTrimEnabled", true),
+            PreloadTrimEnabled = ReadBool(root, "preloadTrimEnabled", false),
             AssetLoadingBatchSize = ReadInt(root, "assetLoadingBatchSize", 8),
             MobileShadersEnabled = ReadBool(root, "mobileShadersEnabled", true),
             ShaderCacheEnabled = ReadBool(root, "shaderCacheEnabled", false),
